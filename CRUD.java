@@ -1,23 +1,35 @@
-//intially just read operation in this file
-package com.practice;
-import com.practice.entity.CRUD;
-import org.hibernate.*;
-import org.hibernate.cfg.*;
-public class Main{
-	public static void main(String[] args){
-		Configuration cfg = new Configuration();
-		cfg.configure("hibernate.cfg.xml");
-		SessionFactory factory = cfg.buildSessionFactory();
-		Session session = factory.openSession();
-		CRUD obj =(CRUD) session.get("com.practice.entity.CRUD",1);
-		if(obj!=null){
-			System.out.println("ID :"+obj.getId());
-			System.out.println("Name :"+obj.getName());
-			System.out.println("Company :"+obj.getCompany());
-			System.out.println("Salary :"+obj.getSalary());
-		}else{
-			System.out.println("Record not found..!");			
-		}
-		session.close();
-	}
+// pojo class @entity
+package com.practice.entity;
+
+public class CRUD {
+    private int id;
+    private String name;
+    private String company;
+    private double salary;
+
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getCompany() {
+        return company;
+    }
+    public void setCompany(String company) {
+        this.company = company;
+    }
+    public double getSalary() {
+        return salary;
+    }
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
 }

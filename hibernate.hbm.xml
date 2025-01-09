@@ -1,0 +1,12 @@
+<!-- mapping file -->
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping>
+<class name="com.practice.entity.CRUD" table="CRUD">
+	<id name="id" column="ID" length="10">
+		<generator class="increment"></generator>
+	</id>
+	<property name="name" column="NAME"></property>
+		<property name="company" column="COMPANY"></property>
+		<property name="salary" column="SALARY"></property>
+</class>
+</hibernate-mapping>
